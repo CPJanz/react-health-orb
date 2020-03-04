@@ -37,6 +37,15 @@ const Loss = styled(Fill)`
   transition: clip-path ${props => props.time}ms 0.5s;
 `;
 
+const Text = styled.h1`
+  background: none;
+  position: absolute;
+  height: ${props => props.size}px;
+  width: ${props => props.size}px;
+  margin: ${props => props.size - 60}px auto 0 0;
+  color: pink;
+`;
+
 export default class HealthOrb extends React.Component {
   state = { gainOrLoss: "gain", changePercentage: 0 };
 
@@ -76,6 +85,7 @@ export default class HealthOrb extends React.Component {
           percent={currentPercent}
           time={changePercentage * 1000}
         />
+        <Text size={size}>{health}</Text>
       </Wrapper>
     );
   }
