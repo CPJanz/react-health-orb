@@ -9,21 +9,19 @@ const Wrapper = styled.div`
   overflow: hidden;
 `;
 
-const Fill = styled.div`
-  width: ${props => props.size}px;
-  height: ${props => props.size}px;
-  clip-path: polygon(
-    0 ${props => props.percent}%,
-    100% ${props => props.percent}%,
-    100% 100%,
-    0 100%
-  );
-  background: ${props => props.color};
+const Fill = styled.div.attrs(props => ({
+  style: {
+    width: props.size + "px",
+    height: props.size + "px",
+    clipPath: `polygon(0 ${props.percent}%, 100% ${props.percent}%, 100% 100%, 0 100% )`,
+    background: props.color
+  }
+}))`
   position: absolute;
 `;
 
 const Health = styled(Fill)`
-  background: red;
+  background: rgba(205, 5, 5, 1);
 
   &.gain {
     transition: clip-path ${props => props.time}ms 0.5s;
@@ -35,7 +33,7 @@ const Gain = styled(Fill)`
 `;
 
 const Loss = styled(Fill)`
-  background: pink;
+  background: rgb(127, 6, 0);
   transition: clip-path ${props => props.time}ms 0.5s;
 `;
 
