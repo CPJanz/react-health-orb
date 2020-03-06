@@ -1,7 +1,8 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import HealthOrb from "./Components/HealthOrb";
+import TechTree from "./Components/TechTree";
+import FakeData from "./FakeData.js";
 
 class App extends React.Component {
   state = {
@@ -10,19 +11,11 @@ class App extends React.Component {
     size: 200
   };
 
-  // componentDidMount() {
-  //   window.setTimeout(() => this.setState({ health: 50 }), 3000);
-  //   window.setTimeout(() => this.setState({ health: 80 }), 4000);
-  //   window.setTimeout(() => this.setState({ health: 20 }), 5000);
-  //   window.setTimeout(
-  //     () => this.setState({ health: 150, maxHealth: 150 }),
-  //     8000
-  //   );
-  // }
   render() {
     return (
       <div className="App">
         <header className="App-header">
+          <TechTree tech={FakeData} />
           <HealthOrb {...this.state} />
           <span
             onClick={event =>
