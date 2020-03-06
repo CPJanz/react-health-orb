@@ -42,7 +42,7 @@ const Text = styled.h1`
   position: absolute;
   height: ${props => props.size}px;
   width: ${props => props.size}px;
-  margin: ${props => props.size - 60}px auto 0 0;
+  margin: ${props => props.size - 80}px auto 0 0;
   color: pink;
 `;
 
