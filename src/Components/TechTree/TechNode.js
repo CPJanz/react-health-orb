@@ -8,6 +8,12 @@ const Wrapper = styled.span`
   margin: 10px;
   border-radius: 5px;
 
+  &.locked {
+    background: darkgrey;
+    border: grey 1px solid;
+    color: grey;
+  }
+
   &.highlight,
   &:hover {
     border: yellow 1px solid;
